@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LA_HAMBURGUESERIA_2026_I_Z</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .master-card{background:linear-gradient(145deg,#fff7c9,#ffc947);border:6px solid #402821;border-radius:24px;box-shadow:12px 12px 0 #1f110c66;width:345px;text-align:center;padding:25px 18px;color:#3d2820;transform:rotate(1deg)}.master-card .crown{width:70px;height:70px;margin:auto;border-radius:50%;background:#e8543e;color:#fff8d3;border:4px solid #402821;font:800 47px/60px 'Baloo 2';box-shadow:0 4px #ad3c2d}.master-card p{margin:14px 0 0;font:800 15px 'Baloo 2';letter-spacing:1px}.master-card h1{font:800 47px/.75 'Baloo 2';margin:11px 0 21px;text-shadow:2px 2px #fff8d8}.final-score{border:3px dashed #8c5638;background:#fff9e7;border-radius:10px;padding:8px;font:800 13px 'Baloo 2';letter-spacing:.5px}.final-score b{display:block;font-size:29px;color:#e8543e}.master-card button{border:3px solid #3c261f;border-radius:11px;background:#78b870;color:white;box-shadow:4px 4px #3c261f;padding:6px 17px;font:800 19px 'Baloo 2';cursor:pointer;margin-top:17px}.master-card button:hover{transform:translate(2px,2px);box-shadow:2px 2px #3c261f}.trash{width:88px;height:76px;background-image:url('assets/trash-sheet.png');background-repeat:no-repeat;background-size:300% 100%;filter:drop-shadow(0 3px 0 #4b281833)}.trash[data-type="can"]{background-position:0% 0%}.trash[data-type="bag"]{background-position:50% 0%}.trash[data-type="bone"]{background-position:100% 0%}
+  </style>
+</head>
+<body>
+  <main id="game">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="La Hamburguesería">LA HAMBURGUESERÍA <span>★</span></a>
+      <div class="stat"><small>PUNTOS</small><strong id="score">0000</strong></div>
+      <div class="stat lives"><small>VIDAS</small><strong id="lives">♥ ♥ ♥</strong></div>
+      <div class="stat"><small>NIVEL</small><strong id="level">01</strong></div>
+    </header>
+
+    <section class="kitchen" id="kitchen" aria-label="Cocina del juego">
+      <div class="wall-sign"><span>COCINA</span><i>DEL CHEF</i></div>
+      <div class="instruction" id="instruction">¡Atrapa el ingrediente indicado!</div>
+      <div class="recipe-card center" id="recipeCard" aria-live="polite">
+        <div class="ticket-head"><span>ORDEN</span><b id="orderNo">#01</b></div>
+        <div class="recipe-stack" id="recipeStack"></div>
+        <div class="ticket-note">¡Memoriza la receta!</div>
+      </div>
+      <div class="falling-zone" id="fallingZone"></div>
+      <div class="counter">
+        <div class="counter-edge"></div>
+        <div class="plates"><span></span><span></span><span></span></div>
+      </div>
+      <div class="chef" id="chef" aria-label="Chef">
+        <div class="chef-hat"><i></i><i></i><i></i></div><div class="chef-face"><b></b><b></b><em></em></div><div class="chef-body"></div>
+      </div>
+      <div class="assembly" id="assembly"></div>
+    </section>
+    <footer><span>←</span> <b>← / →</b> PARA MOVER AL CHEF <span>→</span></footer>
+    <div class="overlay hidden" id="overlay"><div class="complete-card"><div class="check">✓</div><h1>PEDIDO<br>COMPLETADO</h1><p>+<span id="bonus">250</span> PUNTOS</p></div></div>
+    <div class="overlay hidden" id="masterOverlay"><div class="master-card"><div class="crown">★</div><p>¡FELICITACIONES!</p><h1>CHEF<br>MAESTRO</h1><div class="final-score">PUNTUACIÓN FINAL <b id="finalScore">0000</b></div><button id="restartBtn">JUGAR DE NUEVO</button></div></div>
+    <div class="start-screen" id="startScreen"><div class="start-logo">LA HAMBURGUESERÍA <span>★</span></div><h1>RECETAS<br>EN ORDEN</h1><p>Memoriza la tarjeta y atrapa los ingredientes<br>en el orden exacto para completar el pedido.</p><button id="startBtn">¡A COCINAR!</button><small>Usa las flechas del teclado o A / D</small></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
